@@ -1,0 +1,38 @@
+<h1>Departments</h1>
+
+<div>
+  <input type="number" [(ngModel)]="department.id">
+  <input type="text" [(ngModel)]="department.name">
+  <input type="text" [(ngModel)]="department.location">
+  <button class="btn btn-primary" *ngIf="!editing" (click)="addDepartment()">Add</button>
+  <button class="btn btn-primary" *ngIf="editing" (click)="saveDepartment(currentIndex)">Save</button>
+</div>
+
+<div *ngIf="currentIndex !== -1">
+  <h4>{{departments[currentIndex].id}}</h4>
+  <h4>{{departments[currentIndex].name}}</h4>
+  <h4>{{departments[currentIndex].location}}</h4>
+</div>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let department of departments; let index = index">
+        <td>{{department.id}}</td>
+        <td>{{department.name}}</td>
+        <td>{{department.location}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="showDepartment(index)">Show</button>
+          <button class="btn btn-secondary" (click)="editDepartment(index)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteDepartment(index)">Delete</button>
+        </td>
+    </tr>
+  </tbody>
+</table>

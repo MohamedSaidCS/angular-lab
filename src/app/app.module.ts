@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import {CoreModule} from "./core/core.module";
 import {StudentModule} from "./student/student.module";
 import {DepartmentModule} from "./department/department.module";
+import {ProductModule} from "./product/product.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {DepartmentModule} from "./department/department.module";
     AppRoutingModule,
     CoreModule,
     StudentModule,
-    DepartmentModule
+    DepartmentModule,
+    ProductModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
